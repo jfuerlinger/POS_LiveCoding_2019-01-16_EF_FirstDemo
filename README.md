@@ -19,7 +19,7 @@ enable-migrations
 ```
 
 ```
-create-migration
+add-migration <name>
 ```
 
 ```
