@@ -1,4 +1,4 @@
-# POS LiveCoding 2019-01-16 EF-FirstDemo
+# POS LiveCoding (2019-01-16): EF-FirstDemo
 
 ## Cheat Sheet
 
