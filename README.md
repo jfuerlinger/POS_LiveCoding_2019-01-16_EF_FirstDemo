@@ -9,7 +9,7 @@ Server Name:
 
 Connection String:
 ```xml
-<add name="ApplicationDbContext" connectionString="data source=(LocalDb)\MSSQLLocalDB;initial catalog=EF_FirstDemo;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework" providerName="System.Data.SqlClient" />
+<add name="ApplicationDbContext" connectionString="data source=(LocalDb)\MSSQLLocalDB;initial catalog=EF_FirstDemo;integrated security=True;" providerName="System.Data.SqlClient" />
 ```
 
 Important Commands:
