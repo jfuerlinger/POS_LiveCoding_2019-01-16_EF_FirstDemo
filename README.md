@@ -9,19 +9,19 @@ Server Name:
 
 Connection String:
 ```xml
-<add name="ApplicationDbContext" connectionString="Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=EF_FirstDemo;Integrated Security=SSPI" providerName="System.Data.SqlClient"/>
+<add name="ApplicationDbContext" connectionString="data source=(LocalDb)\MSSQLLocalDB;initial catalog=EF_FirstDemo;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework" providerName="System.Data.SqlClient" />
 ```
 
 Important Commands:
 
 ```
-enable-migrations
+Enable-Migrations
 ```
 
 ```
-add-migration <name>
+Add-Migration <Name>
 ```
 
 ```
-update-database
+Update-Database [-Verbose]
 ```
