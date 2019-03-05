@@ -2,9 +2,12 @@
 
 ## Cheat Sheet
 
-| Property | Value       | 
-|----------|-------------|
-| Server Name |  (localdb)\MSSQLLocalDb |
-| Connection String | ```xml
-<add name="ApplicationDbContext" connectionString="Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=EF_FirstDemo;Integrated Security=SSPI" providerName="System.Data.SqlClient"/> ```
-|
+Server Name:
+```
+(localdb)\MSSQLLocalDb
+```
+
+Connection String:
+```xml
+<add name="ApplicationDbContext" connectionString="Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=EF_FirstDemo;Integrated Security=SSPI" providerName="System.Data.SqlClient"/>
+```
