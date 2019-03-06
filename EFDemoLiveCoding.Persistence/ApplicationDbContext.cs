@@ -16,15 +16,17 @@ namespace EFDemoLiveCoding.Persistence
 
         public DbSet<Driver> Drivers { get; set; }
 
+        public DbSet<Team> Teams { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Environment.CurrentDirectory)
-                .AddJsonFile("appsettings.json", true, true);
-
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
             var configuration = builder.Build();
-            string connectionString = configuration["ConnectionString:DefaultConnection"];
+            string connectionString = configuration["ConnectionStrings:DefaultConnection"];
             optionsBuilder.UseSqlServer(connectionString);
+
         }
     }
 }
