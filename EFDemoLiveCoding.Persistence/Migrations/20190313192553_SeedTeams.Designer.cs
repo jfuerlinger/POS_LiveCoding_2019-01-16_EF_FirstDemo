@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFDemoLiveCoding.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190306194702_SetNameAsRequiredInDriverTable")]
-    partial class SetNameAsRequiredInDriverTable
+    [Migration("20190313192553_SeedTeams")]
+    partial class SeedTeams
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,11 +32,34 @@ namespace EFDemoLiveCoding.Persistence.Migrations
                     b.Property<string>("Name")
                         .IsRequired();
 
-                    b.Property<string>("Team");
+                    b.Property<int>("TeamId");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("TeamId");
+
                     b.ToTable("Drivers");
+                });
+
+            modelBuilder.Entity("EFDemoLiveCoding.Core.Entities.Team", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Teams");
+                });
+
+            modelBuilder.Entity("EFDemoLiveCoding.Core.Entities.Driver", b =>
+                {
+                    b.HasOne("EFDemoLiveCoding.Core.Entities.Team", "Team")
+                        .WithMany("Drivers")
+                        .HasForeignKey("TeamId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

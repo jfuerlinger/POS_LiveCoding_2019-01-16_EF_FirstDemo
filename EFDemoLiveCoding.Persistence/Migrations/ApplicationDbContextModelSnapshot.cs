@@ -30,7 +30,7 @@ namespace EFDemoLiveCoding.Persistence.Migrations
                     b.Property<string>("Name")
                         .IsRequired();
 
-                    b.Property<int?>("TeamId");
+                    b.Property<int>("TeamId");
 
                     b.HasKey("Id");
 
@@ -56,7 +56,8 @@ namespace EFDemoLiveCoding.Persistence.Migrations
                 {
                     b.HasOne("EFDemoLiveCoding.Core.Entities.Team", "Team")
                         .WithMany("Drivers")
-                        .HasForeignKey("TeamId");
+                        .HasForeignKey("TeamId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

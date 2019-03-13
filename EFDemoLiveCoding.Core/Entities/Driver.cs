@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EFDemoLiveCoding.Core.Entities
 {
@@ -12,7 +13,10 @@ namespace EFDemoLiveCoding.Core.Entities
 
         public DateTime Birthdate { get; set; }
 
+        [ForeignKey(nameof(TeamId))]
         public Team Team { get; set; }
+
+        public int TeamId { get; set; }
 
 
     }

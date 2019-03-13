@@ -1,5 +1,6 @@
 ﻿using EFDemoLiveCoding.Core.Entities;
 using EFDemoLiveCoding.Persistence;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 
@@ -12,6 +13,8 @@ namespace EFDemoLiveCoding.UI
             using (ApplicationDbContext ctx = new ApplicationDbContext())
             {
                 ctx.Database.EnsureDeleted();
+                //ctx.Database.EnsureCreated();
+                ctx.Database.Migrate();
 
                 Team ferrari = new Team()
                 {
