@@ -1,4 +1,4 @@
-# POS LiveCoding (2019-01-16): EF-FirstDemo
+# POS LiveCoding: EF-FirstDemo
 
 ## Cheat Sheet
 
@@ -13,10 +13,6 @@ Connection String:
 ```
 
 Important Commands:
-
-```
-Enable-Migrations
-```
 
 ```
 Add-Migration <Name>
