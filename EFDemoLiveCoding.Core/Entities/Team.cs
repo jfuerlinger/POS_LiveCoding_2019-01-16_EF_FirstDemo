@@ -7,7 +7,7 @@ namespace EFDemoLiveCoding.Core.Entities
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public ICollection<Driver> Drivers { get; set; }
+        public IList<Driver> Drivers { get; set; } = new List<Driver>();
 
     }
 }
